@@ -47,3 +47,7 @@ repositories:
     type: git
     url: https://github.com/tier4/ds4.git
     version: master
+  drivers/aiot:
+    type: git
+    url: https://github.com/KitFung/aiot_drivers.git
+    version: master
