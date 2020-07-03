@@ -151,12 +151,17 @@ mkdir -p $SHARED_HOST_DIR
 IMAGE=$IMAGE_NAME:$TAG_PREFIX-$ROS_DISTRO$SUFFIX
 echo "Launching $IMAGE"
 
+xhost +local:root 1>/dev/null 2>&1
+
 docker run \
     -it --gpus all --rm \
     $VOLUMES \
     --env="XAUTHORITY=${XAUTH}" \
     --env="DISPLAY=${DISPLAY}" \
     --env="USER_ID=$USER_ID" \
+    --env="NVIDIA_DRIVER_CAPABILITIES=compute,graphics,utility,video,display" \
     -v $(pwd):/autoware_us \
     --net=host \
     $IMAGE
+
+xhost -local:root 1>/dev/null 2>&1
