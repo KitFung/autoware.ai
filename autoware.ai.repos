@@ -31,6 +31,10 @@ repositories:
     type: git
     url: https://github.com/Autoware-AI/visualization.git
     version: master
+  autoware/offline_tools:
+    type: git
+    url: git@github.com:KitFung/aiot_offline_tools.git
+    version: master
   drivers/awf_drivers:
     type: git
     url: https://github.com/Autoware-AI/drivers.git
